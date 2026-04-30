@@ -1,49 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atualizar Produto</title>
-    <link rel="stylesheet" href="update.css">
-</head>
-<body>
-    <form id="form" onsubmit="updatId(event)">
-        <h1>Atualizar Produto</h1>
-        <!-- ID -->
-        <input 
-            type="number" 
-            id="inputupdate" 
-            placeholder="ID do produto"
-            required
-        >
-        <!-- Nome -->
-        <input 
-            type="text" 
-            id="name" 
-            placeholder="Novo nome do produto"
-            required
-        >
-        <!-- Preço -->
-        <input 
-            type="number" 
-            id="price" 
-            placeholder="Novo preço"
-            required
-        >
-        <!-- Estoque -->
-        <input 
-            type="number" 
-            id="stock" 
-            placeholder="Novo estoque"
-            required
-        >
-        <button type="submit">Atualizar</button>
+    <link rel="stylesheet" href="update.css" />
+  </head>
+  <body>
+    <form id="form" onsubmit="updateProduct(event)">
+      <h1>Atualizar Produto</h1>
+      <input
+        type="number"
+        id="productId"
+        placeholder="ID do produto"
+        required
+      />
+      <input
+        type="text"
+        id="name"
+        placeholder="Novo nome do produto"
+        required
+      />
+      <input type="number" id="price" placeholder="Novo preço" required />
+      <input type="number" id="stock" placeholder="Novo estoque" required />
+      <button type="submit">Atualizar</button>
     </form>
 
-    <footer>
-        &copy; Criado por Natanrcs
-    </footer>
+    <footer>&copy; Criado por Natanrcs</footer>
 
     <script src="update.js"></script>
-</body>
+  </body>
 </html>

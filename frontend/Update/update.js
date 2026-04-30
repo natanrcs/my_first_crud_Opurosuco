@@ -1,24 +1,24 @@
-async function updatId(event) {
+async function updateProduct(event) {
     event.preventDefault();
     const form =document.getElementById("form");
-    const input=document.getElementById("inputupdate").value.trim();
+    const input=document.getElementById("productId").value.trim();
     const btn=document.getElementById("btn");
     const name=document.getElementById("name").value.trim();
     const price= document.getElementById("price").value.trim();
     const stock=document.getElementById("stock").value.trim();
     const updateint=parseInt(input,10);
 
-    let dadosform;
-    if(!isNaN(updateint)){
-        dadosform = {
-            id_update: updateint,
-            price:Number(price),
-            stock:Number(stock)
-        };
-    }else{
-        alert("Insira um Id válido para busca!")
+    //const updateid = parseInt(input,10);
+    if(!name || price === "" || stock === ""){
+        alert("Preencha todos os campos abaixo!");
         return;
     }
+
+    const dadosform= {
+        name,
+        price:Number(price),
+        stock:Number(stock)
+    };
     try{
         const url = `http://127.0.0.1:8002/products/${updateint}`;
         const response=await fetch(url, {
@@ -28,7 +28,6 @@ async function updatId(event) {
         });
         if(response.ok){
             alert("Id atualizado com sucesso!")
-            console.log("Teste...")
             form.reset();
         }
         else{
