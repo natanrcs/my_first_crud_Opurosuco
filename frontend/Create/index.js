@@ -29,6 +29,7 @@ async function createProduct(event) {
     if(resp.ok){
       alert("Criado com sucesso o produto")
       console.log("teste teste")
+      console.log("Teste natan api")
       form.reset();
     }
     else{
