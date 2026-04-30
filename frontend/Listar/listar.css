@@ -20,8 +20,6 @@ button:hover {
     transition: 0.5s;
 
 }
-
-/* 🔥 FORM (ou qualquer div principal de conteúdo) */
 .content {
     background: white;
     padding: 20px;
@@ -32,8 +30,6 @@ button:hover {
     gap: 10px;
     width: 500px;
 }
-
-/* 🔥 ÁREA ONDE OS PRODUTOS SERÃO LISTADOS */
 #containerProduto {
     display: flex;
     flex-direction: column;
@@ -41,7 +37,6 @@ button:hover {
     padding-top: 10px;
 }
 
-/* 🔥 CARD DE CADA PRODUTO (quando JS criar) */
 .produto {
     background: #f9f9f9;
     padding: 12px;
