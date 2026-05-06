@@ -33,7 +33,7 @@ def validate_product(product: ProductCreate,db: Session):
 
 @app.get("/home")
 def home():
-    ab = {"version": "1.0", "Natan": "Natan Tesntando.........."}
+    ab = {"version": "1.0","created": "Natanrcs"}
     return ab
 
 @app.post("/products",response_model=ProductResponse)
