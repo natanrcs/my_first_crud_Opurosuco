@@ -1,8 +1,8 @@
 from fastapi import FastAPI,Response,Depends, HTTPException
-from backend.database import engine,SessionLocal
+from database import engine, SessionLocal
 from sqlalchemy.orm import Session
-from backend.models import Base,Product
-from backend.schemas import ProductCreate, ProductResponse
+from models import Base, Product
+from schemas import ProductCreate, ProductResponse
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
 
