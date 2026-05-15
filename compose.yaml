@@ -1,0 +1,28 @@
+services:
+    backend:
+        image: new-back
+        build:
+            context: ./backend
+        networks:
+            - rede-docker-nova
+        env_file:
+            - .env
+        ports:
+            - 8000:8000
+    meu-postgres:
+        image: postgres:alpine
+        networks:
+            - rede-docker-nova
+        env_file:
+            - .env
+    
+networks:
+    rede-docker-nova:
+        external: true
+
+    
+
+
+
+
+
