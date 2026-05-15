@@ -20,7 +20,7 @@ async function createProduct(event) {
     return;
   }
   try{
-    const url="http://127.0.0.1:8002/products";
+    const url="http://127.0.0.1:8000/products";
     const resp= await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

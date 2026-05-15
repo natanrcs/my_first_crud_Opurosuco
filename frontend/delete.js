@@ -15,7 +15,7 @@ async function Deleteid(event) {
         return;
     }
     try{
-        const url = `http://127.0.0.1:8002/products/${deleteInt}`;
+        const url = `http://127.0.0.1:8000/products/${deleteInt}`;
         const response = await fetch(url, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }

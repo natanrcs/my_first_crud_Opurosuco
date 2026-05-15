@@ -20,7 +20,7 @@ async function updateProduct(event) {
         stock:Number(stock)
     };
     try{
-        const url = `http://127.0.0.1:8002/products/${updateint}`;
+        const url = `http://127.0.0.1:8000/products/${updateint}`;
         const response=await fetch(url, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

@@ -3,7 +3,7 @@ const button = document.getElementById("button");
 const buttonZ=document.getElementById("zerarContainer");
 async function listarProdutos() {
   try {
-    const response = await fetch("http://127.0.0.1:8002/products");
+    const response = await fetch("http://127.0.0.1:8000/products");
     const produtos = await response.json();
 
     container.innerHTML = "";
@@ -29,7 +29,6 @@ button.addEventListener("click", listarProdutos);
 
 function apagarConteiner(){
     buttonZ.addEventListener("click",()=>{
-        console.log("Teste .....")
         container.innerHTML = "";
     });
 };
