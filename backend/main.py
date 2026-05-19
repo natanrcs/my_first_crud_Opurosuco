@@ -30,7 +30,7 @@ def validate_product(product: ProductCreate,db: Session):
     product_existing= db.query(Product).filter(Product.name == product.name).first()
     if product_existing:
         raise HTTPException(status_code=400, detail="Produto já existe no banco de dados")
-
+    
 @app.get("/home")
 def home():
     ab = {"version": "1.0","created": "Natanrcs"}

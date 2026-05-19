@@ -1,28 +1,53 @@
 services:
-    backend:
-        image: new-back
-        build:
-            context: ./backend
-        networks:
-            - rede-docker-nova
-        env_file:
-            - .env
-        ports:
-            - 8000:8000
-    meu-postgres:
-        image: postgres:alpine
-        networks:
-            - rede-docker-nova
-        env_file:
-            - .env
-    
+  backend:
+    image: new-back
+    build:
+      context: ./backend
+    networks:
+      - rede-docker-nova
+    env_file:
+      - .env
+    ports:
+        - 8000:8000
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8000/home"]
+      interval: 10s
+      timeout: 6s
+      retries: 5
+
+    depends_on:
+      meu-postgres:
+        condition: service_healthy
+
+  meu-postgres:
+    image: postgres:alpine
+    networks:
+      - rede-docker-nova
+    env_file:
+      - .env
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 6s
+      timeout: 6s
+      retries: 5
+
+  frontend:
+    image: meu-front-atual
+    build:
+      context: ./frontend
+    env_file:
+      - .env
+    networks:
+      - rede-docker-nova
+    ports:
+      - "8001:80"
+
+    depends_on:
+      backend:
+        condition: service_healthy
+
 networks:
-    rede-docker-nova:
-        external: true
-
-    
-
-
-
-
-
+  rede-docker-nova:
+    external: true
