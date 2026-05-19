@@ -1,5 +1,5 @@
 from fastapi import FastAPI,Response,Depends, HTTPException
-from database import engine, SessionLocal
+from backend.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from models import Base, Product
 from schemas import ProductCreate, ProductResponse
