@@ -1,5 +1,5 @@
 from fastapi import FastAPI,Response,Depends, HTTPException
-from backend.database import engine, SessionLocal
+from database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from models import Base, Product
 from schemas import ProductCreate, ProductResponse
@@ -31,6 +31,7 @@ def validate_product(product: ProductCreate,db: Session):
     if product_existing:
         raise HTTPException(status_code=400, detail="Produto já existe no banco de dados")
     
+
 @app.get("/home")
 def home():
     ab = {"version": "1.0","created": "Natanrcs"}
