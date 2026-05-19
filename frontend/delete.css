@@ -1,3 +1,4 @@
+/* Reset */
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +15,7 @@ body{
     min-height: 100vh;
 }
 
+/* Form */
 form{
     background: white;
     width: 400px;
@@ -25,12 +27,14 @@ form{
     gap: 15px;
 }
 
+/* Título */
 h1{
     text-align: center;
     color: #dc2626;
     margin-bottom: 10px;
 }
 
+/* Input */
 input{
     padding: 12px;
     border: 1px solid #ddd;
@@ -45,6 +49,7 @@ input:focus{
     box-shadow: 0 0 8px rgba(220,38,38,.15);
 }
 
+/* Botão delete */
 #btn{
     border: none;
     background: #dc2626;
@@ -61,6 +66,7 @@ input:focus{
     transform: translateY(-2px);
 }
 
+/* Footer */
 footer{
     margin-top: 20px;
     color: #777;
