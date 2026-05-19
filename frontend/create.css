@@ -13,6 +13,7 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+
 form{
     background: white;
     width: 400px;
@@ -36,15 +37,15 @@ input{
     border-radius: 10px;
     outline: none;
     font-size: 15px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 input:focus{
     border-color: #7c3aed;
-    box-shadow: 0 0 8px rgba(124,58,237,.2);
+    box-shadow: 0 0 8px rgba(124,58,237,0.2);
 }
 
-button{
+#btn{
     border: none;
     background: #7c3aed;
     color: white;
@@ -52,14 +53,13 @@ button{
     border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-button:hover{
+#btn:hover{
     background: #6d28d9;
     transform: translateY(-2px);
 }
-
 footer{
     margin-top: 20px;
     color: #777;
