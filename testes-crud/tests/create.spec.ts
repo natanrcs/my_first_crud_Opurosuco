@@ -1,4 +1,4 @@
-import {test,expect,Page} from "@playwright/test"
+import {test,expect,Page} from "@playwright/test";
 const createUrl = 'http://localhost:8001/create.html';
 async function criarProduto(page:Page,
     createUrl: string

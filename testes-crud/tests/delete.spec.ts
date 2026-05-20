@@ -1,4 +1,4 @@
-import {test,expect, Page} from "@playwright/test"
+import {test,expect, Page} from "@playwright/test";
 const deleteUrl="http://localhost:8001/delete.html";
 
 async function deleteProduto(page:Page,deleteUrl:string) {
