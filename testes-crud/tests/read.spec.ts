@@ -3,10 +3,13 @@ import{test,expect,Page} from "@playwright/test";
 const readUrl="http://localhost:8001/read.html";
 async function listarProduto(page:Page,readUrl:string) {
     await page.goto(readUrl);
-    await page.getByTitle("List Product").isVisible();
-    await page.getByText("Camiseta Nike Teste");
-    await expect(page.getByText("Camiseta Nike Teste").first()).toBeVisible();
+    await page.getByRole("heading",{name: "List Products:"}).isVisible();
+    await page.getByRole("button",{name:"Listar"}).click();
+    expect(page.getByTitle("Teste Teste")).toBeVisible();
+    expect(page.getByText("Preço: 10")).toBeVisible();
+    expect(page.getByText("Estoque: 10")).toBeVisible();
+    await page.getByRole("button",{name: "Zerar"}).click();
 };
 test("Deve Validar e mostrar o primeiro produto", async ({page})=> {
-    listarProduto(page,readUrl);
+    await listarProduto(page,readUrl);
 });
