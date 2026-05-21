@@ -8,5 +8,5 @@ async function listarProduto(page:Page,readUrl:string) {
     await expect(page.getByText("Camiseta Nike Teste").first()).toBeVisible();
 };
 test("Deve Validar e mostrar o primeiro produto", async ({page})=> {
-    listarProduto(page,readUrl);
+    await listarProduto(page,readUrl);
 });
