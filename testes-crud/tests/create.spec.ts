@@ -9,9 +9,9 @@ async function criarProduto(page:Page,
 
     });
     await page.goto(createUrl)
-    await page.locator("#name").fill("Teste Teste");
-    await page.locator("#price").fill("10");
-    await page.locator("#stock").fill("10");
+    await page.locator("#name").fill("Shorts Quiksilver");
+    await page.locator("#price").fill("200");
+    await page.locator("#stock").fill("200");
     await page.getByRole("button",{name:"Criar"}).click();
 }
 test('Deve criar um produto com sucesso', async ({page})=> {
