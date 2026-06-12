@@ -33,6 +33,27 @@ services:
       timeout: 6s
       retries: 5
 
+  user-service:
+    image: new-user-service
+    build:
+        context: ./user-service
+    networks:
+      - rede-docker-nova
+    env_file:
+      - .env
+    ports:
+        - 8002:8002
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8002/home"]
+      interval: 10s
+      timeout: 6s
+      retries: 5
+
+    depends_on:
+      meu-postgres:
+        condition: service_healthy
+
   frontend:
     image: meu-front-atual
     env_file:
